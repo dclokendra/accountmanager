@@ -1,0 +1,51 @@
+{% extends 'master/master.html' %}
+ {% block 'title' %}
+ Expenses
+ {% endblock %}
+{% block 'sidebar' %}
+    {% include 'component/sidebar.html' %}
+{% endblock %}
+
+{% block 'nav' %}
+    {% include 'component/nav.html' %}
+{% endblock %}
+{% block 'body' %}
+    <h3>All Expenses</h3>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exp in expenses %}
+                <tr>
+                    <td>{{ exp.id }}</td>
+                    <td>{{ exp.title }}</td>
+                    <td>{{ exp.price }}</td>
+                    <td>{{ exp.date }}</td>
+                    <td><button class="btn btn-warning"><a href=""><i class="fa fa-edit"></i></a></button>
+                        <button class="btn btn-danger" title="Delete"><a href="" onclick="return confirm('Are you sure to Delete?')"><i class="fa fa-trash"></i></a></button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+{% endblock %}
+
+{% block 'footer' %}
+    {% include 'component/footer.html' %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'master/master.html' %}
+ {% block 'title' %}
+ Income- Category
+ {% endblock %}
+{% block 'sidebar' %}
+    {% include 'component/sidebar.html' %}
+{% endblock %}
+
+{% block 'nav' %}
+    {% include 'component/nav.html' %}
+{% endblock %}
+
+{% block 'body' %}
+{% include 'component/message.html' %}
+    <form method="post">
+        {{form.as_p}}
+         {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+{#    <table>#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>SN</th>#}
+{#                <th>Title</th>#}
+{#                <th>Action</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for c in category %}#}
+{#                <tr>#}
+{#                    <td></td>#}
+{#                    <td>{{ c.title }}</td>#}
+{#                    <td><button class="btn btn-warning"><a href=""><i class="fa fa-edit"></i></a></button>#}
+{#                        <button class="btn btn-danger" title="Delete"><a href="" onclick="return confirm('Are you sure to Delete?')"><i class="fa fa-trash"></i></a></button>#}
+{#                    </td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#        <thead>#}
+{#                <tr>#}
+{#                    <th>SN</th>#}
+{#                    <th>Title</th>#}
+{#                    <th>Action</th>#}
+{#                </tr>#}
+{#            </thead>#}
+{#    </table>#}
+{% endblock %}
+
+{% block 'footer' %}
+    {% include 'component/footer.html' %}
+{% endblock %}

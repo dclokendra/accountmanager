@@ -1,0 +1,25 @@
+{% extends 'master/master.html' %}
+ {% block 'title' %}
+ Expenses- Create
+ {% endblock %}
+{% block 'sidebar' %}
+    {% include 'component/sidebar.html' %}
+{% endblock %}
+
+{% block 'nav' %}
+    {% include 'component/nav.html' %}
+{% endblock %}
+
+{% block 'body' %}
+{% include 'component/message.html' %}
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+{% endblock %}
+
+{% block 'footer' %}
+    {% include 'component/footer.html' %}
+{% endblock %}

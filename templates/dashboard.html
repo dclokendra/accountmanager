@@ -1,0 +1,19 @@
+{% extends 'master/master.html' %}
+ {% block 'title' %}
+ Dashboard
+ {% endblock %}
+{% block 'sidebar' %}
+    {% include 'component/sidebar.html' %}
+{% endblock %}
+
+{% block 'nav' %}
+    {% include 'component/nav.html' %}
+{% endblock %}
+
+{% block 'body' %}
+    {% include 'component/message.html' %}
+{% endblock %}
+
+{% block 'footer' %}
+    {% include 'component/footer.html' %}
+{% endblock %}
